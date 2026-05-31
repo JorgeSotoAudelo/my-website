@@ -46,7 +46,7 @@ jobs:
       - name: Download current task definition
         run: |
           aws ecs describe-task-definition \
-            --task-definition portfolio-backend-f4ab \
+            --task-definition default-portfolio-backend-f4ab \
             --query taskDefinition > task-definition.json
 
       - name: Render new task definition with updated image
