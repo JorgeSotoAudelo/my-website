@@ -24,10 +24,10 @@ jobs:
 
       - name: Package Lambda function
         run: |
-          zip -j resume_function.zip backend/functions/resume_function.py
+          zip -j lambda_function.zip backend/functions/resume_function.py
 
       - name: Deploy Lambda code
         run: |
           aws lambda update-function-code \
             --function-name ${{ secrets.LAMBDA_FUNCTION_NAME }} \
-            --zip-file fileb://resume_function.zip
+            --zip-file fileb://lambda_function.zip
